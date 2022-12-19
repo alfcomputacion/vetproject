@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}ADD|UPDATE{% endblock %}
+{% block main %}
+    <div class="card border-primary m-auto mb-3 p-3" style="max-width: 40rem;">
+        <form  method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-success float-right">Submit</button>
+        </form>
+    </div>
+{% endblock %}

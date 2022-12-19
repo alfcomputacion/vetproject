@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% block title %}Product-Detail{% endblock %}
+{% block main %}
+    <div class="card border-primary m-auto mb-3 text-center" style="max-width: 40rem;">
+        <div class="card-header">{{ product.prod_name}}</div>
+        <div class="card-body text-primary">
+            {{product.description }}
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">
+                Created on: {{product.created}}
+                Updated on: {{product.updated}}
+            </small>
+        </div>
+    </div>
+
+{% endblock %}

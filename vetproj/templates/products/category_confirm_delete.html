@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% block title %}Delete category{% endblock %}
+{% block main %}
+    <div class="card border-primary m-auto" style="max-width: 40rem;">
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="card-body">
+                <h5 class="card-title"><Strong>Do you want to erase this category?</Strong></h5>
+                <h6 class="text-primary">{{category.category}}</h6>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    {{category.created}}
+                </small>
+            </div>
+            <a class="btn btn-info float-right btn-sm m-2" href="{% url 'products:category-list' %}">No</a>
+            <button class="btn btn-success float-right btn-sm m-2">Yes</button>
+        </form>
+    </div>
+{% endblock %}

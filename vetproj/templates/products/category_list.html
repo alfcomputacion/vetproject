@@ -1,0 +1,34 @@
+{% extends '_base.html' %}
+{% block title %}Category List{% endblock %}
+{% block main %}
+<div class="border-primary p-2 m-2">
+
+    <a class="btn btn-success float-right" href="{% url 'products:create' %}">Product ++</a>
+    <a class="btn btn-success float-right" href="{% url 'products:category' %}">Category ++</a>
+</div>
+<div class="card border-primary m-auto mt-3 p-2"
+    style="max-width: 60rem;">
+
+    <ul class="list-group list-group-flush mb-3">
+        {% for category in category_list %}
+            <li class="list-group-item">
+                <a href="{% url 'products:category-detail' category.slug %}">
+                    {{ category.category }}
+                </a>
+                
+                    <small class="text-muted">Created: {{category.created}}  </small> 
+                    <small class="text-muted">Updated: {{category.created}}</small> 
+                
+                <a href="{% url 'products:category-delete' category.slug %}" 
+                class="btn btn-danger btn-ms float-right btn-sm m-2">
+                Delete
+            </a>
+            <a href="{% url 'products:category-update' category.slug %}" 
+            class="btn btn-info btn-ms float-right btn-sm m-2">
+            Update
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% block title %}Product-Detail{% endblock %}
+{% block main %}
+    <div class="card border-primary m-auto mb-3 text-center" style="max-width: 40rem;">
+        <div class="card-header">{{ category.category}}</div>
+        <div class="card-body text-primary">
+            {{category.slug }}
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">
+                Created on: {{category.created}}
+                Updated on: {{category.updated}}
+            </small>
+        </div>
+    </div>
+
+{% endblock %}
