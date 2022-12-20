@@ -2,14 +2,16 @@ from django.urls import reverse_lazy
 from django.views.generic import (
     CreateView, DeleteView, DetailView, ListView, UpdateView)
 from .models import Product, Category
+from .forms import ProductForm
 
 # Create your views here.
 
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ['prod_name', 'description', 'category',
-              'stock', 'buy_price', 'sell_price']
+    # fields = ['prod_name', 'description', 'category',
+    #           'stock', 'buy_price', 'sell_price']
+    form_class = ProductForm
 
 
 class ProductDeleteView(DeleteView):
@@ -27,9 +29,9 @@ class ProductListView(ListView):
 
 class ProductUpdateView(UpdateView):
     model = Product
-    fields = ['prod_name', 'description', 'category',
-              'stock', 'buy_price', 'sell_price']
-
+    # fields = ['prod_name', 'description', 'category',
+    #           'stock', 'buy_price', 'sell_price']
+    form_class = ProductForm
 # Category
 
 
