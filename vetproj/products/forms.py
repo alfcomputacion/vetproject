@@ -28,3 +28,8 @@ class ProductForm(ModelForm):
                        'display': 'inline-block'}
             ),
         }
+        help_texts = {
+            'category': 'must be the one that refernce the product.',
+            'description': 'describes the product.'
+        }
+        labels = {'prod_name': 'Product'}
